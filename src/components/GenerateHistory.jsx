@@ -8,6 +8,7 @@ export const GenerateHistory = () => {
 
   return (
     <div className={s.wrapper}>
+        reload
       {data.map((text, index) => (
         <p key={index} className={s.scan_card}>
           {text}
