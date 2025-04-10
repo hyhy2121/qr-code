@@ -10,27 +10,24 @@ export const QrCodeScanner = () => {
   const [scanned, setScanned] = useState(null);
 
   const scanHandler = (result) => {
-    if(!result) return;
+    if (!result) return;
 
     const prevData = JSON.parse(localStorage.getItem(SCAN_DATA) || "[]");
 
-    if(prevData.includes(result.text)) return;
+    if (prevData.includes(result.text)) return;
 
     setScanned(result.text);
 
-
-    localStorage.setItem(
-      SCAN_DATA,
-      JSON.stringify([...prevData, result.text])
-    );
+    localStorage.setItem(SCAN_DATA, JSON.stringify([...prevData, result.text]));
   };
 
   return (
     <div className={s.wrapper}>
       <QrReader
-      scanDelay={1000}
+        constraints={{ facingMode: "enviroment" }}
+        scanDelay={1000}
         onResult={scanHandler}
-        containerStyle={{width: "300px"}}
+        containerStyle={{ width: "300px" }}
       />
       <p>{scanned}</p>
     </div>
