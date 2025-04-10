@@ -5,10 +5,10 @@ import s from './Navigation.module.css'
 export const Navigation = () => {
   return (
     <nav className={s.wrapper}>
-    <Link className={s.link} to="/generate">Генерирровать QR код</Link>
-    <Link className={s.link} to="/scan">Сканировать QR код</Link>
-    <Link className={s.link} to="/generateHistory">История генерирования</Link>
-    <Link className={s.link} to="/scanHistory">История скинирования</Link>
+    <Link className={s.link} to="/qr-code/generate">Генерирровать QR код</Link>
+    <Link className={s.link} to="/qr-code/scan">Сканировать QR код</Link>
+    <Link className={s.link} to="/qr-code/generateHistory">История генерирования</Link>
+    <Link className={s.link} to="/qr-code/scanHistory">История скинирования</Link>
     </nav>
   )
 }
